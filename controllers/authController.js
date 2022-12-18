@@ -86,7 +86,7 @@ export const forgotPassword = async(req, res, next) => {
 
         await user.save();
 
-        const reseturl = `https://authentication-front-sar.onrender.com/passwordreset/${resetToken}`;
+        const reseturl = `https://authentication-front-sar.onrender.com/resetpassword/${resetToken}`;
 
         const message = `
         <h1>You have requested a password reset</h1>
