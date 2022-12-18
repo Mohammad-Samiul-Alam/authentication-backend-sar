@@ -2,7 +2,7 @@ import app from "./app.js";
 import mongoose from "mongoose";
 import dotenv from "dotenv";
 
-dotenv.config({path: "config/config.env"});
+dotenv.config();
 
 const port = process.env.PORT || 5001;
 const mongo = process.env.MONGO;
@@ -12,7 +12,7 @@ mongoose.connect(mongo, {
     useUnifiedTopology: true,
 }).then(()=> {
     app.listen(port, ()=> {
-        console.log(`Server is running on http://localhost:${port}`);
+        console.log(`Server is running on ${port}`);
     })
 }).catch(error=>console.log(error));
 
